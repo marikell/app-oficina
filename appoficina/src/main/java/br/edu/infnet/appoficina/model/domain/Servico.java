@@ -1,5 +1,5 @@
 package br.edu.infnet.appoficina.model.domain;
 
-public class Orçamento {
+public class Servico {
 
 }
