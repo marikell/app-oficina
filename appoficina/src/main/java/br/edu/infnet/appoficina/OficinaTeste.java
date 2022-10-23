@@ -15,27 +15,31 @@ public class OficinaTeste implements ApplicationRunner {
 	}
 
 	private void criar() {
-		Oficina m1 = new Oficina();
-		m1.nome = "Oficina do João";
-		m1.cidade = "Santo André";
-		m1.endereco = "Rua santo andré";
-		m1.estado = "SP";		
+		Oficina oficina1 = new Oficina();
+		oficina1.setNome("Oficina do João");
+		oficina1.setCidade("Santo André");
+		oficina1.setEndereco("Rua santo andré");
+		oficina1.setBairro("Bairro da luz");
+		oficina1.setEstado("SP");		
 
-		Oficina m2 = new Oficina();
-		m2.nome = "Oficina do Marco";
-		m2.cidade = "São Paulo";
-		m2.endereco = "Rua são paulo";
-		m2.estado = "SP";	
+		Oficina oficina2 = new Oficina();
+		oficina2.setNome("Oficina do Marco");
+		oficina2.setCidade("São Paulo");
+		oficina2.setEndereco("Rua são paulo");
+		oficina2.setBairro("Bairro de SP");
+		oficina2.setEstado("SP");	
 		
-		Oficina m3 = new Oficina();
-		m3.nome = "Oficina do Paulo";
-		m3.cidade = "Itu";
-		m3.endereco = "Rua itu";
-		m3.estado = "SP";	
+		Oficina oficina3 = new Oficina();
+		oficina3.setNome("Oficina do Paulo");
+		oficina3.setCidade("Itu");
+		oficina3.setEndereco("Rua itu");
+		oficina3.setEstado("SP");
+		oficina3.setBairro("Bairro de Itu");
+		oficina3.setComplemento("Apt 231");
 		
-		exibir(m1);
-		exibir(m2);
-		exibir(m3);
+		exibir(oficina1);
+		exibir(oficina2);
+		exibir(oficina3);
 	}
 	
 	private void exibir(Oficina oficina) {

@@ -16,24 +16,27 @@ public class MecanicaTeste implements ApplicationRunner {
 	}
 
 	private void criar() {
-		Mecanica m1 = new Mecanica();
-		m1.nome = "Higienização";
-		m1.tipoManutencao = TipoManutencao.Motor;
-		m1.valor = 20;
+		Mecanica mecanica1 = new Mecanica();
+		mecanica1.setNome("Mecânica");
+		mecanica1.setTipoManutencao(TipoManutencao.Motor);
+		mecanica1.setValor(20);
+		mecanica1.setCodigo("002");
 
-		Mecanica m2 = new Mecanica();
-		m2.nome = "Higienização";
-		m2.tipoManutencao = TipoManutencao.SistemaFreios;
-		m2.valor = 100;
-		
-		Mecanica m3 = new Mecanica();
-		m3.nome = "Higienização";
-		m3.tipoManutencao = TipoManutencao.SistemaFreios;
-		m3.valor = 44;
-		
-		exibir(m1);
-		exibir(m2);
-		exibir(m3);
+		Mecanica mecanica2 = new Mecanica();
+		mecanica2.setNome("Mecânica");
+		mecanica2.setTipoManutencao(TipoManutencao.SistemaFreios);
+		mecanica2.setValor(100);
+		mecanica2.setCodigo("002");
+
+		Mecanica mecanica3 = new Mecanica();
+		mecanica3.setNome("Mecânica");
+		mecanica3.setTipoManutencao(TipoManutencao.SistemaFreios);
+		mecanica3.setValor(44);
+		mecanica3.setCodigo("002");
+
+		exibir(mecanica1);
+		exibir(mecanica2);
+		exibir(mecanica3);
 	}
 	
 	private void exibir(Mecanica mecanica) {

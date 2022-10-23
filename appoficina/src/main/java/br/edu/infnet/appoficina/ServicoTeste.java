@@ -4,7 +4,14 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appoficina.model.domain.Higienizacao;
+import br.edu.infnet.appoficina.model.domain.Mecanica;
+import br.edu.infnet.appoficina.model.domain.Pintura;
 import br.edu.infnet.appoficina.model.domain.Servico;
+import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
+import br.edu.infnet.appoficina.model.domain.TipoManutencao;
+import br.edu.infnet.appoficina.model.domain.TipoMassaAplicada;
+import br.edu.infnet.appoficina.model.domain.TipoPintura;
 
 @Component
 public class ServicoTeste implements ApplicationRunner {
@@ -15,21 +22,28 @@ public class ServicoTeste implements ApplicationRunner {
 	}
 
 	private void criar() {
-		Servico s1 = new Servico();
-		s1.nome = "Serviço";
-		s1.valor = 20;
-
-		Servico s2 = new Servico();
-		s2.nome = "Serviço";
-		s2.valor = 10;
-
-		Servico s3 = new Servico();
-		s3.nome = "Serviço";
-		s3.valor = 44;	
+		Higienizacao higienizacao = new Higienizacao();
+		higienizacao.setNome("Higienização");
+		higienizacao.setTipoHigienizacao(TipoHigienizacao.Aspiracao);
+		higienizacao.setValor(20);
+		higienizacao.setCodigo("001");
 		
-		exibir(s1);
-		exibir(s2);
-		exibir(s3);
+		Mecanica mecanica = new Mecanica();
+		mecanica.setNome("Mecânica");
+		mecanica.setTipoManutencao(TipoManutencao.SistemaFreios);
+		mecanica.setValor(100);
+		mecanica.setCodigo("002");
+
+		Pintura pintura = new Pintura();
+		pintura.setNome("Pintura");
+		pintura.setValor(20);
+		pintura.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
+		pintura.setTipoPintura(TipoPintura.Metalica);
+		pintura.setCodigo("003");
+		
+		exibir(higienizacao);
+		exibir(mecanica);
+		exibir(pintura);
 	}
 	
 	private void exibir(Servico servico) {

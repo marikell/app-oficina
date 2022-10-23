@@ -16,24 +16,28 @@ public class HigienizacaoTeste implements ApplicationRunner {
 	}
 
 	private void criar() {
-		Higienizacao h1 = new Higienizacao();
-		h1.nome = "Higienização";
-		h1.tipoHigienizacao = TipoHigienizacao.Aspiracao;
-		h1.valor = 20;
+		Higienizacao higienizacao1 = new Higienizacao();
+		higienizacao1.setNome("Higienização");
+		higienizacao1.setTipoHigienizacao(TipoHigienizacao.Aspiracao);
+		higienizacao1.setValor(20);
+		higienizacao1.setCodigo("001");
 
-		Higienizacao h2 = new Higienizacao();
-		h2.nome = "Higienização";
-		h2.tipoHigienizacao = TipoHigienizacao.Completa;
-		h2.valor = 100;
+		Higienizacao higienizacao2 = new Higienizacao();
+		higienizacao2.setNome("Higienização");
+		higienizacao2.setTipoHigienizacao(TipoHigienizacao.Completa);
+		higienizacao2.setValor(100);
+		higienizacao2.setCodigo("001");
+
 		
-		Higienizacao h3 = new Higienizacao();
-		h3.nome = "Higienização";
-		h3.tipoHigienizacao = TipoHigienizacao.EscovacaoTeto;
-		h3.valor = 44;
+		Higienizacao higienizacao3 = new Higienizacao();
+		higienizacao3.setNome("Higienização");
+		higienizacao3.setTipoHigienizacao(TipoHigienizacao.EscovacaoTeto);
+		higienizacao3.setValor(44);
+		higienizacao3.setCodigo("001");
 		
-		exibir(h1);
-		exibir(h2);
-		exibir(h3);
+		exibir(higienizacao1);
+		exibir(higienizacao2);
+		exibir(higienizacao3);
 	}
 	
 	private void exibir(Higienizacao higienizacao) {

@@ -17,27 +17,30 @@ public class PinturaTeste implements ApplicationRunner {
 	}
 
 	private void criar() {
-		Pintura p1 = new Pintura();
-		p1.nome = "Pintura";
-		p1.valor = 20;
-		p1.tipoMassaAplicada = TipoMassaAplicada.Acrilica;
-		p1.tipoPintura = TipoPintura.Metalica;
+		Pintura pintura1 = new Pintura();
+		pintura1.setNome("Pintura");
+		pintura1.setValor(20);
+		pintura1.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
+		pintura1.setTipoPintura(TipoPintura.Metalica);
+		pintura1.setCodigo("003");
+		
+		Pintura pintura2 = new Pintura();
+		pintura2.setNome("Pintura");
+		pintura2.setValor(10);
+		pintura2.setTipoMassaAplicada(TipoMassaAplicada.Poliester);
+		pintura2.setTipoPintura(TipoPintura.Solida);
+		pintura2.setCodigo("003");
 
-		Pintura p2 = new Pintura();
-		p2.nome = "Pintura";
-		p2.valor = 10;
-		p2.tipoMassaAplicada = TipoMassaAplicada.Poliester;
-		p2.tipoPintura = TipoPintura.Solida;
-		
-		Pintura p3 = new Pintura();
-		p3.nome = "Pintura";
-		p3.valor = 44;
-		p3.tipoMassaAplicada = TipoMassaAplicada.Plastica;
-		p3.tipoPintura = TipoPintura.Perolizada;		
-		
-		exibir(p1);
-		exibir(p2);
-		exibir(p3);
+		Pintura pintura3 = new Pintura();
+		pintura3.setNome("Pintura");
+		pintura3.setValor(44);
+		pintura3.setTipoMassaAplicada(TipoMassaAplicada.Plastica);
+		pintura3.setTipoPintura(TipoPintura.Perolizada);		
+		pintura3.setCodigo("003");
+
+		exibir(pintura1);
+		exibir(pintura2);
+		exibir(pintura3);
 	}
 	
 	private void exibir(Pintura pintura) {

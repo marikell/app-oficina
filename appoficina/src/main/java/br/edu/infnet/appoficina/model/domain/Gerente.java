@@ -4,18 +4,49 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Gerente {	
-	public String nome;
-	public String cpf;
-	public String email;
-	public Calendar dataContratacao;
+	private String nome;
+	private String cpf;
+	private String email;
+	private Calendar dataContratacao;
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Calendar getDataContratacao() {
+		return dataContratacao;
+	}
+
+	public void setDataContratacao(Calendar dataContratacao) {
+		this.dataContratacao = dataContratacao;
+	}
 	
 	@Override
 	public String toString() {
-		return nome + ";" + cpf + ";" + email + ";" + this.ObterDataContratacaoFormatado();
+		return nome + ";" + cpf + ";" + email + ";" + ObterDataContratacaoFormatado();
 	}
 	
-	private String ObterDataContratacaoFormatado() {
-		
+	private String ObterDataContratacaoFormatado() {		
 		if (this.dataContratacao == null)
 			return "";
 		

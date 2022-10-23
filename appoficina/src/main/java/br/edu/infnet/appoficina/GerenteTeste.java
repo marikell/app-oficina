@@ -19,27 +19,27 @@ public class GerenteTeste implements ApplicationRunner {
 	}
 
 	private void criar() {
-		Gerente g1 = new Gerente();
-		g1.nome = "Antônio Silva";
-		g1.cpf = "46825186925";
-		g1.email = "antonio.silva@oficina.com.br";
-		g1.dataContratacao = getCalendar(2020, Month.APRIL, 12);
+		Gerente gerente1 = new Gerente();
+		gerente1.setNome("Antônio Silva");
+		gerente1.setCpf("46825186925");
+		gerente1.setEmail("antonio.silva@oficina.com.br");
+		gerente1.setDataContratacao(getCalendar(2020, Month.APRIL, 12));
 
-		Gerente g2 = new Gerente();
-		g2.nome = "Maria Flor Souza";
-		g2.cpf = "47825286125";
-		g2.email = "mariaflor.souza@oficina.com.br";
-		g2.dataContratacao = getCalendar(2022, Month.APRIL, 10);
+		Gerente gerente2 = new Gerente();
+		gerente2.setNome("Maria Flor Souza");
+		gerente2.setCpf("47825286125");
+		gerente2.setEmail("mariaflor.souza@oficina.com.br");
+		gerente2.setDataContratacao(getCalendar(2022, Month.APRIL, 10));
 
-		Gerente g3 = new Gerente();
-		g3.nome = "Lua Castro";
-		g3.cpf = "46821232311";
-		g3.email = "lua.castro@oficina.com.br";
-		g3.dataContratacao = getCalendar(2019, Month.AUGUST, 1);
+		Gerente gerente3 = new Gerente();
+		gerente3.setNome("Lua Castro");
+		gerente3.setCpf("46821232311");
+		gerente3.setEmail("lua.castro@oficina.com.br");
+		gerente3.setDataContratacao(getCalendar(2019, Month.AUGUST, 1));
 
-		exibir(g1);
-		exibir(g2);
-		exibir(g3);
+		exibir(gerente1);
+		exibir(gerente2);
+		exibir(gerente3);
 	}
 
 	private Calendar getCalendar(int ano, Month month, int dia) {
