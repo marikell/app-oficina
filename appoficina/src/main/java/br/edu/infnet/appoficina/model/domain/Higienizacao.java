@@ -2,6 +2,8 @@ package br.edu.infnet.appoficina.model.domain;
 
 public class Higienizacao extends Servico {
 	private TipoHigienizacao tipoHigienizacao;
+	private boolean necessarioArmazenamentoItensVeiculo;
+	private TipoLimpeza tipoLimpeza;
 
 	public TipoHigienizacao getTipoHigienizacao() {
 		return tipoHigienizacao;
@@ -11,8 +13,24 @@ public class Higienizacao extends Servico {
 		this.tipoHigienizacao = tipoHigienizacao;
 	}
 
+	public boolean isNecessarioArmazenamentoItensVeiculo() {
+		return necessarioArmazenamentoItensVeiculo;
+	}
+
+	public void setNecessarioArmazenamentoItensVeiculo(boolean necessarioArmazenamentoItensVeiculo) {
+		this.necessarioArmazenamentoItensVeiculo = necessarioArmazenamentoItensVeiculo;
+	}
+
+	public TipoLimpeza getTipoLimpeza() {
+		return tipoLimpeza;
+	}
+
+	public void setTipoLimpeza(TipoLimpeza tipoLimpeza) {
+		this.tipoLimpeza = tipoLimpeza;
+	}
+
 	@Override
 	public String toString() {
-		return super.toString() + ";" + tipoHigienizacao.toString();
+		return super.toString() + ";" + tipoHigienizacao.toString() + ";" + tipoLimpeza.toString() + ";" + necessarioArmazenamentoItensVeiculo;
 	}
 }

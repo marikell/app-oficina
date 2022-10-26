@@ -1,5 +1,7 @@
 package br.edu.infnet.appoficina.model.domain;
 
+import java.util.List;
+
 public class Oficina {
 	private String nome;
 	private String endereco;
@@ -7,7 +9,17 @@ public class Oficina {
 	private String cidade;
 	private String estado;
 	private String bairro;
+	private Gerente gerente;
+	private List<Servico> servicos;
+	
+	public Oficina() {
 
+	}
+	
+	public Oficina(Gerente gerente) {
+		this.gerente = gerente;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -55,9 +67,17 @@ public class Oficina {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
+	
+	public List<Servico> getServicos() {
+		return servicos;
+	}
+
+	public void setServicos(List<Servico> servicos) {
+		this.servicos = servicos;
+	}
 
 	@Override
 	public String toString() {
-		return nome + ";" + endereco + ";" + complemento + ";" + cidade + ";" + estado;
+		return nome + ";" + endereco + ";" + complemento + ";" + cidade + ";" + estado + ";" + gerente + ";" +servicos.size();
 	}
 }

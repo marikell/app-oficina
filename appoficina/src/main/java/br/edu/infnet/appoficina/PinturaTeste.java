@@ -1,5 +1,7 @@
 package br.edu.infnet.appoficina;
 
+import java.awt.Color;
+
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,7 @@ public class PinturaTeste implements ApplicationRunner {
 		pintura1.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
 		pintura1.setTipoPintura(TipoPintura.Metalica);
 		pintura1.setCodigo("003");
+		pintura1.setColor(new Color(255, 255, 255));
 		
 		Pintura pintura2 = new Pintura();
 		pintura2.setNome("Pintura");
@@ -30,6 +33,7 @@ public class PinturaTeste implements ApplicationRunner {
 		pintura2.setTipoMassaAplicada(TipoMassaAplicada.Poliester);
 		pintura2.setTipoPintura(TipoPintura.Solida);
 		pintura2.setCodigo("003");
+		pintura2.setColor(new Color(200, 255, 255));
 
 		Pintura pintura3 = new Pintura();
 		pintura3.setNome("Pintura");
@@ -37,6 +41,7 @@ public class PinturaTeste implements ApplicationRunner {
 		pintura3.setTipoMassaAplicada(TipoMassaAplicada.Plastica);
 		pintura3.setTipoPintura(TipoPintura.Perolizada);		
 		pintura3.setCodigo("003");
+		pintura3.setColor(new Color(159, 255, 255));
 
 		exibir(pintura1);
 		exibir(pintura2);

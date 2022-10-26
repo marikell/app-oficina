@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appoficina.model.domain.Higienizacao;
 import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
+import br.edu.infnet.appoficina.model.domain.TipoLimpeza;
 
 @Component
 public class HigienizacaoTeste implements ApplicationRunner {
@@ -21,20 +22,25 @@ public class HigienizacaoTeste implements ApplicationRunner {
 		higienizacao1.setTipoHigienizacao(TipoHigienizacao.Aspiracao);
 		higienizacao1.setValor(20);
 		higienizacao1.setCodigo("001");
-
+		higienizacao1.setNecessarioArmazenamentoItensVeiculo(false);
+		higienizacao1.setTipoLimpeza(TipoLimpeza.Intensa);
+		
 		Higienizacao higienizacao2 = new Higienizacao();
 		higienizacao2.setNome("Higienização");
 		higienizacao2.setTipoHigienizacao(TipoHigienizacao.Completa);
 		higienizacao2.setValor(100);
 		higienizacao2.setCodigo("001");
+		higienizacao2.setNecessarioArmazenamentoItensVeiculo(true);
+		higienizacao2.setTipoLimpeza(TipoLimpeza.Media);
 
-		
 		Higienizacao higienizacao3 = new Higienizacao();
 		higienizacao3.setNome("Higienização");
 		higienizacao3.setTipoHigienizacao(TipoHigienizacao.EscovacaoTeto);
 		higienizacao3.setValor(44);
 		higienizacao3.setCodigo("001");
-		
+		higienizacao3.setNecessarioArmazenamentoItensVeiculo(false);
+		higienizacao3.setTipoLimpeza(TipoLimpeza.Leve);
+
 		exibir(higienizacao1);
 		exibir(higienizacao2);
 		exibir(higienizacao3);

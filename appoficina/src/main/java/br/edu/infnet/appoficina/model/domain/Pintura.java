@@ -1,8 +1,11 @@
 package br.edu.infnet.appoficina.model.domain;
 
+import java.awt.Color;
+
 public class Pintura extends Servico {
 	private TipoPintura tipoPintura;
 	private TipoMassaAplicada tipoMassaAplicada;
+	private Color color;
 	
 	public TipoPintura getTipoPintura() {
 		return tipoPintura;
@@ -20,9 +23,17 @@ public class Pintura extends Servico {
 		this.tipoMassaAplicada = tipoMassaAplicada;
 	}
 
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
 	@Override
 	public String toString() {
-		return super.toString() + ";" + this.tipoPintura.toString() + ";"
-				+ this.tipoMassaAplicada.toString();
+		return super.toString() + ";" + tipoPintura.toString() + ";"
+				+ tipoMassaAplicada.toString() +";" +color;
 	}
 }
