@@ -4,6 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appoficina.controller.HigienizacaoController;
 import br.edu.infnet.appoficina.model.domain.Higienizacao;
 import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
 import br.edu.infnet.appoficina.model.domain.TipoLimpeza;
@@ -41,12 +42,8 @@ public class HigienizacaoTeste implements ApplicationRunner {
 		higienizacao3.setNecessarioArmazenamentoItensVeiculo(false);
 		higienizacao3.setTipoLimpeza(TipoLimpeza.Leve);
 
-		exibir(higienizacao1);
-		exibir(higienizacao2);
-		exibir(higienizacao3);
-	}
-	
-	private void exibir(Higienizacao higienizacao) {
-		System.out.println("Higienização - " + higienizacao);
+		HigienizacaoController.incluir(higienizacao1);
+		HigienizacaoController.incluir(higienizacao2);
+		HigienizacaoController.incluir(higienizacao3);
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appoficina.controller.OficinaController;
 import br.edu.infnet.appoficina.model.domain.Gerente;
 import br.edu.infnet.appoficina.model.domain.Higienizacao;
 import br.edu.infnet.appoficina.model.domain.Mecanica;
@@ -55,7 +56,7 @@ public class OficinaTeste implements ApplicationRunner {
 		oficina2.setEstado("SP");	
 		oficina2.setServicos(obterOutrosServicos());
 
-		Oficina oficina3 = new Oficina();
+		Oficina oficina3 = new Oficina(gerente1);
 		oficina3.setNome("Oficina do Paulo");
 		oficina3.setCidade("Itu");
 		oficina3.setEndereco("Rua itu");
@@ -64,9 +65,9 @@ public class OficinaTeste implements ApplicationRunner {
 		oficina3.setComplemento("Apt 231");
 		oficina3.setServicos(obterOutrosServicos());
 
-		exibir(oficina1);
-		exibir(oficina2);
-		exibir(oficina3);
+		OficinaController.incluir(oficina1);
+		OficinaController.incluir(oficina2);
+		OficinaController.incluir(oficina3);
 	}
 	
 	private List<Servico> ObterServicosPrimeiraOficina(){
@@ -100,7 +101,7 @@ public class OficinaTeste implements ApplicationRunner {
 		pintura.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
 		pintura.setTipoPintura(TipoPintura.Metalica);
 		pintura.setCodigo("003");
-		pintura.setColor(new Color(255,200,100));
+		pintura.setCor(new Color(255,200,100));
 		
 		List<Servico> servicos = new ArrayList<>();
 		
@@ -108,9 +109,5 @@ public class OficinaTeste implements ApplicationRunner {
 		servicos.add(pintura);
 		
 		return servicos;
-	}
-	
-	private void exibir(Oficina oficina) {
-		System.out.println("Oficina - " + oficina);
 	}
 }

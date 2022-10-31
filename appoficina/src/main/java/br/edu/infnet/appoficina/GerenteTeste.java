@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appoficina.controller.GerenteController;
 import br.edu.infnet.appoficina.model.domain.Gerente;
 
 @Component
@@ -18,7 +19,7 @@ public class GerenteTeste implements ApplicationRunner {
 		this.criar();
 	}
 
-	private void criar() {
+	private void criar() {		
 		Gerente gerente1 = new Gerente();
 		gerente1.setNome("Antônio Silva");
 		gerente1.setCpf("46825186925");
@@ -36,10 +37,10 @@ public class GerenteTeste implements ApplicationRunner {
 		gerente3.setCpf("46821232311");
 		gerente3.setEmail("lua.castro@oficina.com.br");
 		gerente3.setDataContratacao(getCalendar(2019, Month.AUGUST, 1));
-
-		exibir(gerente1);
-		exibir(gerente2);
-		exibir(gerente3);
+		
+		GerenteController.incluir(gerente1);
+		GerenteController.incluir(gerente2);
+		GerenteController.incluir(gerente3);
 	}
 
 	private Calendar getCalendar(int ano, Month month, int dia) {
@@ -49,9 +50,5 @@ public class GerenteTeste implements ApplicationRunner {
 		gc.set(Calendar.DAY_OF_MONTH, dia);
 
 		return gc;
-	}
-	
-	private void exibir(Gerente gerente) {
-		System.out.println("Gerente - " + gerente);
 	}
 }

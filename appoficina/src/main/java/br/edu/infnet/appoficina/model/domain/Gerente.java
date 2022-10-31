@@ -3,7 +3,7 @@ package br.edu.infnet.appoficina.model.domain;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Gerente {	
+public class Gerente extends Entity {	
 	private String nome;
 	private String cpf;
 	private String email;
@@ -43,10 +43,10 @@ public class Gerente {
 	
 	@Override
 	public String toString() {
-		return nome + ";" + cpf + ";" + email + ";" + ObterDataContratacaoFormatado();
+		return super.toString() + ";" + nome + ";" + cpf + ";" + email + ";" + ObterDataContratacaoFormatado();
 	}
 	
-	private String ObterDataContratacaoFormatado() {		
+	public String ObterDataContratacaoFormatado() {		
 		if (this.dataContratacao == null)
 			return "";
 		

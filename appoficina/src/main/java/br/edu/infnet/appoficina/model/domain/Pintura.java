@@ -5,7 +5,7 @@ import java.awt.Color;
 public class Pintura extends Servico {
 	private TipoPintura tipoPintura;
 	private TipoMassaAplicada tipoMassaAplicada;
-	private Color color;
+	private Color cor;
 	
 	public TipoPintura getTipoPintura() {
 		return tipoPintura;
@@ -23,17 +23,17 @@ public class Pintura extends Servico {
 		this.tipoMassaAplicada = tipoMassaAplicada;
 	}
 
-	public Color getColor() {
-		return color;
+	public Color getCor() {
+		return cor;
 	}
 
-	public void setColor(Color color) {
-		this.color = color;
+	public void setCor(Color color) {
+		this.cor = color;
 	}
 
 	@Override
 	public String toString() {
 		return super.toString() + ";" + tipoPintura.toString() + ";"
-				+ tipoMassaAplicada.toString() +";" +color;
+				+ tipoMassaAplicada.toString() +";" +cor;
 	}
 }

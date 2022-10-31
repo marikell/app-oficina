@@ -6,10 +6,10 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appoficina.controller.ServicoController;
 import br.edu.infnet.appoficina.model.domain.Higienizacao;
 import br.edu.infnet.appoficina.model.domain.Mecanica;
 import br.edu.infnet.appoficina.model.domain.Pintura;
-import br.edu.infnet.appoficina.model.domain.Servico;
 import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
 import br.edu.infnet.appoficina.model.domain.TipoLimpeza;
 import br.edu.infnet.appoficina.model.domain.TipoManutencao;
@@ -48,14 +48,10 @@ public class ServicoTeste implements ApplicationRunner {
 		pintura.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
 		pintura.setTipoPintura(TipoPintura.Metalica);
 		pintura.setCodigo("003");
-		pintura.setColor(new Color(255,200,100));
+		pintura.setCor(new Color(255,200,100));
 		
-		exibir(higienizacao);
-		exibir(mecanica);
-		exibir(pintura);
-	}
-	
-	private void exibir(Servico servico) {
-		System.out.println("Serviço - " + servico);
+		ServicoController.incluir(pintura);
+		ServicoController.incluir(mecanica);
+		ServicoController.incluir(higienizacao);
 	}
 }

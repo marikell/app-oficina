@@ -4,6 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appoficina.controller.MecanicaController;
 import br.edu.infnet.appoficina.model.domain.Mecanica;
 import br.edu.infnet.appoficina.model.domain.TipoManutencao;
 import br.edu.infnet.appoficina.model.domain.TipoVeiculo;
@@ -41,12 +42,8 @@ public class MecanicaTeste implements ApplicationRunner {
 		mecanica3.setTipoVeiculo(TipoVeiculo.Moto);
 		mecanica3.setPlaca("ABC789");
 		
-		exibir(mecanica1);
-		exibir(mecanica2);
-		exibir(mecanica3);
-	}
-	
-	private void exibir(Mecanica mecanica) {
-		System.out.println("Mecânica - " + mecanica);
+		MecanicaController.incluir(mecanica1);
+		MecanicaController.incluir(mecanica2);
+		MecanicaController.incluir(mecanica3);
 	}
 }

@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appoficina.controller.PinturaController;
 import br.edu.infnet.appoficina.model.domain.Pintura;
 import br.edu.infnet.appoficina.model.domain.TipoMassaAplicada;
 import br.edu.infnet.appoficina.model.domain.TipoPintura;
@@ -25,7 +26,7 @@ public class PinturaTeste implements ApplicationRunner {
 		pintura1.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
 		pintura1.setTipoPintura(TipoPintura.Metalica);
 		pintura1.setCodigo("003");
-		pintura1.setColor(new Color(255, 255, 255));
+		pintura1.setCor(new Color(255, 255, 255));
 		
 		Pintura pintura2 = new Pintura();
 		pintura2.setNome("Pintura");
@@ -33,7 +34,7 @@ public class PinturaTeste implements ApplicationRunner {
 		pintura2.setTipoMassaAplicada(TipoMassaAplicada.Poliester);
 		pintura2.setTipoPintura(TipoPintura.Solida);
 		pintura2.setCodigo("003");
-		pintura2.setColor(new Color(200, 255, 255));
+		pintura2.setCor(new Color(200, 255, 255));
 
 		Pintura pintura3 = new Pintura();
 		pintura3.setNome("Pintura");
@@ -41,14 +42,10 @@ public class PinturaTeste implements ApplicationRunner {
 		pintura3.setTipoMassaAplicada(TipoMassaAplicada.Plastica);
 		pintura3.setTipoPintura(TipoPintura.Perolizada);		
 		pintura3.setCodigo("003");
-		pintura3.setColor(new Color(159, 255, 255));
+		pintura3.setCor(new Color(159, 255, 255));
 
-		exibir(pintura1);
-		exibir(pintura2);
-		exibir(pintura3);
-	}
-	
-	private void exibir(Pintura pintura) {
-		System.out.println("Pintura - " + pintura);
+		PinturaController.incluir(pintura1);
+		PinturaController.incluir(pintura2);
+		PinturaController.incluir(pintura3);
 	}
 }

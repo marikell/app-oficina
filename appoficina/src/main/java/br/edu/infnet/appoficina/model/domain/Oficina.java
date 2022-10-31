@@ -2,7 +2,7 @@ package br.edu.infnet.appoficina.model.domain;
 
 import java.util.List;
 
-public class Oficina {
+public class Oficina extends Entity {
 	private String nome;
 	private String endereco;
 	private String complemento;
@@ -74,6 +74,10 @@ public class Oficina {
 
 	public void setServicos(List<Servico> servicos) {
 		this.servicos = servicos;
+	}
+
+	public Gerente getGerente() {
+		return gerente;
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package br.edu.infnet.appoficina.model.domain;
 
 public abstract class Servico {
+	private int id;
 	private String codigo;
 	private String nome;
 	private double valor;
@@ -29,8 +30,16 @@ public abstract class Servico {
 		this.codigo = codigo;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return this.nome + ";" + this.valor + ";" + this.codigo;
+		return id + ";" + nome + ";" + valor + ";" + codigo;
 	}
 }
