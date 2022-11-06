@@ -1,17 +1,21 @@
 package br.edu.infnet.appoficina;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appoficina.controller.MecanicaController;
 import br.edu.infnet.appoficina.model.domain.Mecanica;
 import br.edu.infnet.appoficina.model.domain.TipoManutencao;
 import br.edu.infnet.appoficina.model.domain.TipoVeiculo;
+import br.edu.infnet.appoficina.service.MecanicaService;
 
 @Component
 public class MecanicaTeste implements ApplicationRunner {
 
+	@Autowired
+	private MecanicaService mecanicaService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		this.criar();
@@ -42,8 +46,8 @@ public class MecanicaTeste implements ApplicationRunner {
 		mecanica3.setTipoVeiculo(TipoVeiculo.Moto);
 		mecanica3.setPlaca("ABC789");
 		
-		MecanicaController.incluir(mecanica1);
-		MecanicaController.incluir(mecanica2);
-		MecanicaController.incluir(mecanica3);
+		mecanicaService.incluir(mecanica1);
+		mecanicaService.incluir(mecanica2);
+		mecanicaService.incluir(mecanica3);
 	}
 }

@@ -4,22 +4,28 @@ import java.time.Month;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appoficina.controller.GerenteController;
 import br.edu.infnet.appoficina.model.domain.Gerente;
+import br.edu.infnet.appoficina.service.GerenteService;
 
+@Order(4)
 @Component
 public class GerenteTeste implements ApplicationRunner {
 
+	@Autowired
+	private GerenteService gerenteService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		this.criar();
 	}
 
-	private void criar() {		
+	private void criar() {				
 		Gerente gerente1 = new Gerente();
 		gerente1.setNome("Antônio Silva");
 		gerente1.setCpf("46825186925");
@@ -38,9 +44,9 @@ public class GerenteTeste implements ApplicationRunner {
 		gerente3.setEmail("lua.castro@oficina.com.br");
 		gerente3.setDataContratacao(getCalendar(2019, Month.AUGUST, 1));
 		
-		GerenteController.incluir(gerente1);
-		GerenteController.incluir(gerente2);
-		GerenteController.incluir(gerente3);
+		gerenteService.incluir(gerente1);
+		gerenteService.incluir(gerente2);
+		gerenteService.incluir(gerente3);
 	}
 
 	private Calendar getCalendar(int ano, Month month, int dia) {

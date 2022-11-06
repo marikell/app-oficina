@@ -1,17 +1,23 @@
 package br.edu.infnet.appoficina;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appoficina.controller.HigienizacaoController;
 import br.edu.infnet.appoficina.model.domain.Higienizacao;
 import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
 import br.edu.infnet.appoficina.model.domain.TipoLimpeza;
+import br.edu.infnet.appoficina.service.HigienizacaoService;
 
+@Order(2)
 @Component
 public class HigienizacaoTeste implements ApplicationRunner {
 
+	@Autowired
+	private HigienizacaoService higienizacaoService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		this.criar();
@@ -42,8 +48,8 @@ public class HigienizacaoTeste implements ApplicationRunner {
 		higienizacao3.setNecessarioArmazenamentoItensVeiculo(false);
 		higienizacao3.setTipoLimpeza(TipoLimpeza.Leve);
 
-		HigienizacaoController.incluir(higienizacao1);
-		HigienizacaoController.incluir(higienizacao2);
-		HigienizacaoController.incluir(higienizacao3);
+		higienizacaoService.incluir(higienizacao1);
+		higienizacaoService.incluir(higienizacao2);
+		higienizacaoService.incluir(higienizacao3);
 	}
 }

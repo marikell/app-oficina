@@ -2,6 +2,11 @@ package br.edu.infnet.appoficina.model.domain;
 
 import java.awt.Color;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "pintura")
 public class Pintura extends Servico {
 	private TipoPintura tipoPintura;
 	private TipoMassaAplicada tipoMassaAplicada;

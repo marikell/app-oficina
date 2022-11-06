@@ -1,5 +1,10 @@
 package br.edu.infnet.appoficina.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "mecanica")
 public class Mecanica extends Servico {
 	private TipoManutencao tipoManutencao;
 	private TipoVeiculo tipoVeiculo;

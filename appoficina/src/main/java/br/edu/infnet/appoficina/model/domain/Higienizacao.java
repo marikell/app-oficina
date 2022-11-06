@@ -1,5 +1,10 @@
 package br.edu.infnet.appoficina.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "higienizacao")
 public class Higienizacao extends Servico {
 	private TipoHigienizacao tipoHigienizacao;
 	private boolean necessarioArmazenamentoItensVeiculo;

@@ -3,12 +3,31 @@ package br.edu.infnet.appoficina.model.domain;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Gerente extends Entity {	
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "gerente")
+public class Gerente  {	
 	private String nome;
 	private String cpf;
 	private String email;
 	private Calendar dataContratacao;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}

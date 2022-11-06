@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appoficina.controller.OficinaController;
 import br.edu.infnet.appoficina.model.domain.Gerente;
 import br.edu.infnet.appoficina.model.domain.Higienizacao;
 import br.edu.infnet.appoficina.model.domain.Mecanica;
@@ -22,10 +22,14 @@ import br.edu.infnet.appoficina.model.domain.TipoManutencao;
 import br.edu.infnet.appoficina.model.domain.TipoMassaAplicada;
 import br.edu.infnet.appoficina.model.domain.TipoPintura;
 import br.edu.infnet.appoficina.model.domain.TipoVeiculo;
+import br.edu.infnet.appoficina.service.OficinaService;
 
 @Component
 public class OficinaTeste implements ApplicationRunner {
 
+	@Autowired
+	private OficinaService oficinaService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		this.criar();
@@ -65,9 +69,9 @@ public class OficinaTeste implements ApplicationRunner {
 		oficina3.setComplemento("Apt 231");
 		oficina3.setServicos(obterOutrosServicos());
 
-		OficinaController.incluir(oficina1);
-		OficinaController.incluir(oficina2);
-		OficinaController.incluir(oficina3);
+		oficinaService.incluir(oficina1);
+		oficinaService.incluir(oficina2);
+		oficinaService.incluir(oficina3);
 	}
 	
 	private List<Servico> ObterServicosPrimeiraOficina(){

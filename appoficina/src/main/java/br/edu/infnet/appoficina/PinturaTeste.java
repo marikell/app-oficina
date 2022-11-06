@@ -2,18 +2,22 @@ package br.edu.infnet.appoficina;
 
 import java.awt.Color;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appoficina.controller.PinturaController;
 import br.edu.infnet.appoficina.model.domain.Pintura;
 import br.edu.infnet.appoficina.model.domain.TipoMassaAplicada;
 import br.edu.infnet.appoficina.model.domain.TipoPintura;
+import br.edu.infnet.appoficina.service.PinturaService;
 
 @Component
 public class PinturaTeste implements ApplicationRunner {
 
+	@Autowired
+	private PinturaService pinturaService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		this.criar();
@@ -44,8 +48,8 @@ public class PinturaTeste implements ApplicationRunner {
 		pintura3.setCodigo("003");
 		pintura3.setCor(new Color(159, 255, 255));
 
-		PinturaController.incluir(pintura1);
-		PinturaController.incluir(pintura2);
-		PinturaController.incluir(pintura3);
+		pinturaService.incluir(pintura1);
+		pinturaService.incluir(pintura2);
+		pinturaService.incluir(pintura3);
 	}
 }
