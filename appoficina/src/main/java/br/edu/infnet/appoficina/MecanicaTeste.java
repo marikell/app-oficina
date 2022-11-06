@@ -3,6 +3,7 @@ package br.edu.infnet.appoficina;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appoficina.model.domain.Mecanica;
@@ -10,6 +11,7 @@ import br.edu.infnet.appoficina.model.domain.TipoManutencao;
 import br.edu.infnet.appoficina.model.domain.TipoVeiculo;
 import br.edu.infnet.appoficina.service.MecanicaService;
 
+@Order(6)
 @Component
 public class MecanicaTeste implements ApplicationRunner {
 

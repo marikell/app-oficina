@@ -11,7 +11,7 @@ import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
 import br.edu.infnet.appoficina.model.domain.TipoLimpeza;
 import br.edu.infnet.appoficina.service.HigienizacaoService;
 
-@Order(2)
+@Order(5)
 @Component
 public class HigienizacaoTeste implements ApplicationRunner {
 

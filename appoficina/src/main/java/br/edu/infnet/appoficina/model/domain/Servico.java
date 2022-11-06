@@ -5,9 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
 @Table(name = "servico")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Servico {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

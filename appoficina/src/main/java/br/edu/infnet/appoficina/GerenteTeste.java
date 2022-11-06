@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appoficina.model.domain.Gerente;
 import br.edu.infnet.appoficina.service.GerenteService;
 
-@Order(4)
+@Order(3)
 @Component
 public class GerenteTeste implements ApplicationRunner {
 

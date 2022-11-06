@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appoficina.model.domain.Gerente;
@@ -24,6 +25,7 @@ import br.edu.infnet.appoficina.model.domain.TipoPintura;
 import br.edu.infnet.appoficina.model.domain.TipoVeiculo;
 import br.edu.infnet.appoficina.service.OficinaService;
 
+@Order(2)
 @Component
 public class OficinaTeste implements ApplicationRunner {
 

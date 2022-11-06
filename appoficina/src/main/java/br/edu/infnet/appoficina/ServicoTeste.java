@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appoficina.controller.ServicoController;
@@ -17,6 +18,7 @@ import br.edu.infnet.appoficina.model.domain.TipoMassaAplicada;
 import br.edu.infnet.appoficina.model.domain.TipoPintura;
 import br.edu.infnet.appoficina.model.domain.TipoVeiculo;
 
+@Order(4)
 @Component
 public class ServicoTeste implements ApplicationRunner {
 

@@ -5,6 +5,7 @@ import java.awt.Color;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appoficina.model.domain.Pintura;
@@ -12,6 +13,7 @@ import br.edu.infnet.appoficina.model.domain.TipoMassaAplicada;
 import br.edu.infnet.appoficina.model.domain.TipoPintura;
 import br.edu.infnet.appoficina.service.PinturaService;
 
+@Order(7)
 @Component
 public class PinturaTeste implements ApplicationRunner {
 

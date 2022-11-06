@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,9 @@ public class Gerente  {
 	private String cpf;
 	private String email;
 	private Calendar dataContratacao;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,6 +63,14 @@ public class Gerente  {
 
 	public void setDataContratacao(Calendar dataContratacao) {
 		this.dataContratacao = dataContratacao;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	@Override
