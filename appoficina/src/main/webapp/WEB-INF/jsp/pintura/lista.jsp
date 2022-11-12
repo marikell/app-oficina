@@ -5,14 +5,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <title>Cadastro de pinturas</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<title>Cadastro de pinturas</title>
 </head>
 <body>
-<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
 		<h1>Cadastro de Pinturas: ${listagem.size()}</h1>
-
+		<h4>
+			<a href="/pintura">Nova pintura</a>
+		</h4>
 		<table class="table">
 			<thead>
 				<tr>
@@ -33,8 +36,8 @@
 						<td>${item.nome}</td>
 						<td>${item.codigo}</td>
 						<td>${item.valor}</td>
-						<td>${item.tipoPintura}</td>
-						<td>${item.tipoMassaAplicada}</td>
+						<td>${item.tipoPintura.name}</td>
+						<td>${item.tipoMassaAplicada.name}</td>
 						<td>${item.cor}</td>
 						<td><a href="/pintura/${item.id}/excluir">excluir</a></td>
 					</tr>
