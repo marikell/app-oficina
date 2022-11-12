@@ -1,7 +1,5 @@
 package br.edu.infnet.appoficina;
 
-import java.awt.Color;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
