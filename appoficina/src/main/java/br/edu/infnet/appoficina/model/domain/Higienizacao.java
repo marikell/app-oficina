@@ -6,9 +6,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "higienizacao")
 public class Higienizacao extends Servico {
+	
+	public Higienizacao() {
+		super(CodigoServico.Higienizacao, "Higienização");
+	}
+
 	private TipoHigienizacao tipoHigienizacao;
 	private boolean necessarioArmazenamentoItensVeiculo;
 	private TipoLimpeza tipoLimpeza;
+	
 
 	public TipoHigienizacao getTipoHigienizacao() {
 		return tipoHigienizacao;

@@ -16,11 +16,11 @@ import br.edu.infnet.appoficina.service.GerenteService;
 @Controller
 @ComponentScan
 public class GerenteController  {	
+	private final String listaRota = "/gerente/lista";
+	private final String exclusaoRota = "/gerente/{id}/excluir";
 	private final String rotaBase = "/gerente";
 	private final String inclusaoRota = "/gerente/incluir";
 	private final String cadastroRota = "gerente/cadastro";
-	private final String listaRota = "/gerente/lista";
-	private final String exclusaoRota = "/gerente/{id}/excluir";
 	
 	@Autowired
 	private GerenteService gerenteService;

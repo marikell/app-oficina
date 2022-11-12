@@ -12,7 +12,7 @@
 <c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container mt-3">
 		<h1>Cadastro de Higienizações: ${listagem.size()}</h1>
-
+		  <h4><a href="/higienizacao">Nova higienização</a></h4>
 		<table class="table">
 			<thead>
 				<tr>
@@ -33,9 +33,9 @@
 						<td>${item.nome}</td>
 						<td>${item.codigo}</td>
 						<td>${item.valor}</td>
-						<td>${item.tipoHigienizacao}</td>
+						<td>${item.tipoHigienizacao.name}</td>
 						<td>${item.necessarioArmazenamentoItensVeiculo}</td>
-						<td>${item.tipoLimpeza}</td>
+						<td>${item.tipoLimpeza.name}</td>
 						<td><a href="/higienizacao/${item.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

@@ -10,6 +10,10 @@ public class Mecanica extends Servico {
 	private TipoVeiculo tipoVeiculo;
 	private String placa;	
 
+	public Mecanica() {
+		super(CodigoServico.Mecanica, "Mecânica");
+	}
+
 	public TipoManutencao getTipoManutencao() {
 		return tipoManutencao;
 	}

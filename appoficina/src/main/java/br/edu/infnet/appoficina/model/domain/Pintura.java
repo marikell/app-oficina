@@ -12,6 +12,11 @@ public class Pintura extends Servico {
 	private TipoMassaAplicada tipoMassaAplicada;
 	private Color cor;
 	
+	public Pintura() {
+		super(CodigoServico.Pintura, "Pintura");
+	}
+
+	
 	public TipoPintura getTipoPintura() {
 		return tipoPintura;
 	}

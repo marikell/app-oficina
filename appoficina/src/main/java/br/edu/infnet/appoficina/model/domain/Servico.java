@@ -18,12 +18,9 @@ public abstract class Servico {
 	private String codigo;
 	private String nome;
 	private double valor;
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
+	
+	public Servico(CodigoServico codigo, String nome) {
+		this.codigo = codigo.getName();
 		this.nome = nome;
 	}
 
@@ -35,20 +32,20 @@ public abstract class Servico {
 		this.valor = valor;
 	}
 
-	public String getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-	
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+	
+	public String getNome() {
+		return nome;
 	}
 
 	@Override

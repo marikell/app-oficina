@@ -5,7 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import br.edu.infnet.appoficina.model.domain.Higienizacao;
+import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
+import br.edu.infnet.appoficina.model.domain.TipoLimpeza;
 import br.edu.infnet.appoficina.service.HigienizacaoService;
 
 @Controller
@@ -13,7 +17,10 @@ public class HigienizacaoController {
 
 	private final String listaRota = "/higienizacao/lista";
 	private final String exclusaoRota = "/higienizacao/{id}/excluir";
-
+	private final String rotaBase = "/higienizacao";
+	private final String inclusaoRota = "/higienizacao/incluir";
+	private final String cadastroRota = "higienizacao/cadastro";
+	
 	@Autowired
 	private HigienizacaoService higienizacaoService;
 
@@ -29,6 +36,26 @@ public class HigienizacaoController {
 
 		higienizacaoService.excluir(id);
 		
+		return "redirect:" + listaRota;
+	}
+	
+	@GetMapping(value = rotaBase)
+	public String telaCadastro(Model model) {
+		
+		TipoHigienizacao[] tiposHigienizacao = TipoHigienizacao.values();
+		TipoLimpeza[] tiposLimpeza = TipoLimpeza.values();
+
+		model.addAttribute("tiposHigienizacao", tiposHigienizacao);
+		model.addAttribute("tiposLimpeza", tiposLimpeza);
+
+		return cadastroRota;
+	}
+	
+	@PostMapping(value = inclusaoRota)
+	public String incluir(Higienizacao higienizacao) {
+
+		higienizacaoService.incluir(higienizacao);
+
 		return "redirect:" + listaRota;
 	}
 }

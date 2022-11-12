@@ -29,27 +29,21 @@ public class ServicoTeste implements ApplicationRunner {
 
 	private void criar() {
 		Higienizacao higienizacao = new Higienizacao();
-		higienizacao.setNome("Higienização");
 		higienizacao.setTipoHigienizacao(TipoHigienizacao.Aspiracao);
 		higienizacao.setValor(20);
-		higienizacao.setCodigo("001");
 		higienizacao.setNecessarioArmazenamentoItensVeiculo(true);
 		higienizacao.setTipoLimpeza(TipoLimpeza.Media);
 		
 		Mecanica mecanica = new Mecanica();
-		mecanica.setNome("Mecânica");
 		mecanica.setTipoManutencao(TipoManutencao.SistemaFreios);
 		mecanica.setValor(100);
-		mecanica.setCodigo("002");
 		mecanica.setTipoVeiculo(TipoVeiculo.Carro);
 		mecanica.setPlaca("ABC456");
 		
 		Pintura pintura = new Pintura();
-		pintura.setNome("Pintura");
 		pintura.setValor(20);
 		pintura.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
 		pintura.setTipoPintura(TipoPintura.Metalica);
-		pintura.setCodigo("003");
 		pintura.setCor(new Color(255,200,100));
 		
 		ServicoController.incluir(pintura);
