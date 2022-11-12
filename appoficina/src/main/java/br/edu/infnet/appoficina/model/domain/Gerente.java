@@ -3,6 +3,7 @@ package br.edu.infnet.appoficina.model.domain;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Gerente  {
 	private String cpf;
 	private String email;
 	private Calendar dataContratacao;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	

@@ -26,8 +26,8 @@ public class GerenteController  {
 	private GerenteService gerenteService;
 
 	@GetMapping(value = listaRota)
-	public String telaLista(Model model) {
-		model.addAttribute("listagem", gerenteService.obterLista());
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
+		model.addAttribute("listagem", gerenteService.obterLista(usuario));
 
 		return listaRota;
 	}

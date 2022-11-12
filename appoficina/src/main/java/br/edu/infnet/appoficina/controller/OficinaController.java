@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appoficina.model.domain.Oficina;
+import br.edu.infnet.appoficina.model.domain.Usuario;
 import br.edu.infnet.appoficina.service.GerenteService;
 import br.edu.infnet.appoficina.service.OficinaService;
 
@@ -43,10 +45,10 @@ public class OficinaController {
 	}
 	
 	@GetMapping(value = rotaBase)
-	public String telaCadastro(Model model) {
+	public String telaCadastro(Model model, @SessionAttribute("user") Usuario usuario) {
 
 	
-		model.addAttribute("gerentes", gerenteService.obterLista());
+		model.addAttribute("gerentes", gerenteService.obterLista(usuario));
 
 		return cadastroRota;
 	}
