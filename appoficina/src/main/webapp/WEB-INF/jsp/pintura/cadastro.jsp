@@ -17,6 +17,13 @@
 		<h2>Cadastro de Pintura</h2>
 		<form action="/pintura/incluir" method="post">
 			<div class="form-group">
+				<label>Oficina:</label> <select name="oficina" class="form-control">
+					<c:forEach var="s" items="${oficinas}">
+						<option value="${s.id}">${s.nome}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="form-group">
 				<label>Tipo de Pintura:</label> <select name="tipoPintura"
 					class="form-control">
 					<c:forEach var="tipoPintura" items="${tiposPintura}">

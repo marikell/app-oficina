@@ -26,6 +26,7 @@
 					<th>Tipo de Pintura</th>
 					<th>Tipo de massa aplicada</th>
 					<th>Cor (Formato RGB)</th>
+					<th>Oficina</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -39,6 +40,7 @@
 						<td>${item.tipoPintura.name}</td>
 						<td>${item.tipoMassaAplicada.name}</td>
 						<td>${item.cor}</td>
+						<td>${item.oficina.nome}</td>
 						<td><a href="/pintura/${item.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

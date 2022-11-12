@@ -1,17 +1,13 @@
 package br.edu.infnet.appoficina.model.domain;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name = "oficina")
@@ -22,20 +18,19 @@ public class Oficina {
 	private String cidade;
 	private String estado;
 	private String bairro;
-	@OneToOne(cascade = CascadeType.DETACH) 
+	
+	@ManyToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name = "idGerente")
 	private Gerente gerente;
-	@ManyToMany(cascade = CascadeType.DETACH)
-	private List<Servico> servicos;
-	
+
 	public Oficina() {
 
 	}
-	
+
 	public Oficina(Gerente gerente) {
 		this.gerente = gerente;
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -47,7 +42,7 @@ public class Oficina {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -95,14 +90,6 @@ public class Oficina {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	
-	public List<Servico> getServicos() {
-		return servicos;
-	}
-
-	public void setServicos(List<Servico> servicos) {
-		this.servicos = servicos;
-	}
 
 	public Gerente getGerente() {
 		return gerente;
@@ -110,6 +97,6 @@ public class Oficina {
 
 	@Override
 	public String toString() {
-		return nome + ";" + endereco + ";" + complemento + ";" + cidade + ";" + estado + ";" + gerente + ";" +servicos.size();
+		return nome + ";" + endereco + ";" + complemento + ";" + cidade + ";" + estado + ";" + gerente + ";";
 	}
 }

@@ -26,6 +26,7 @@
 					<th>Tipo de Manutenção</th>
 					<th>Placa</th>
 					<th>Tipo de Veículo</th>
+					<th>Oficina</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -39,6 +40,7 @@
 						<td>${item.tipoManutencao.name}</td>
 						<td>${item.placa}</td>
 						<td>${item.tipoVeiculo.name}</td>
+						<td>${item.oficina.nome}</td>
 						<td><a href="/mecanica/${item.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

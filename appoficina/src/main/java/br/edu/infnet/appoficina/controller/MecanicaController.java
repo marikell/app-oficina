@@ -7,13 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import br.edu.infnet.appoficina.model.domain.Higienizacao;
 import br.edu.infnet.appoficina.model.domain.Mecanica;
-import br.edu.infnet.appoficina.model.domain.TipoHigienizacao;
-import br.edu.infnet.appoficina.model.domain.TipoLimpeza;
 import br.edu.infnet.appoficina.model.domain.TipoManutencao;
 import br.edu.infnet.appoficina.model.domain.TipoVeiculo;
 import br.edu.infnet.appoficina.service.MecanicaService;
+import br.edu.infnet.appoficina.service.OficinaService;
 
 @Controller
 public class MecanicaController {
@@ -25,6 +23,9 @@ public class MecanicaController {
 	
 	@Autowired
 	private MecanicaService mecanicaService;
+	
+	@Autowired
+	private OficinaService oficinaService;
 
 	@GetMapping(value = listaRota)
 	public String telaLista(Model model) {
@@ -47,6 +48,7 @@ public class MecanicaController {
 		TipoManutencao[] tiposManutencao = TipoManutencao.values();
 		TipoVeiculo[] tiposVeiculo = TipoVeiculo.values();
 
+		model.addAttribute("oficinas", oficinaService.obterLista());
 		model.addAttribute("tiposManutencao", tiposManutencao);
 		model.addAttribute("tiposVeiculo", tiposVeiculo);
 

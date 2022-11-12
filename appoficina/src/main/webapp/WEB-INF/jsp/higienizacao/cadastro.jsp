@@ -17,6 +17,14 @@
 		<h2>Cadastro de Higienização</h2>
 		<form action="/higienizacao/incluir" method="post">
 			<div class="form-group">
+				<label>Oficina:</label> <select name="oficina" class="form-control">
+					<c:forEach var="s" items="${oficinas}">
+						<option value="${s.id}">${s.nome}</option>
+					</c:forEach>
+				</select>
+			</div>
+
+			<div class="form-group">
 				<label>Tipo Limpeza:</label> <select name="tipoLimpeza"
 					class="form-control">
 					<c:forEach var="tipoLimpeza" items="${tiposLimpeza}">
@@ -44,9 +52,8 @@
 			</div>
 
 			<div class="form-group">
-				<label>Valor:</label> 
-				<input type="number"
-					class="form-control" id="valor" name="valor" step="0.01">
+				<label>Valor:</label> <input type="number" class="form-control"
+					id="valor" name="valor" step="0.01">
 			</div>
 
 			<button type="submit" class="btn btn-default">Cadastrar</button>

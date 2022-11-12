@@ -23,6 +23,7 @@
 					<th>Tipo de Higienização</th>
 					<th>Requer armazenamento de itens externos?</th>
 					<th>Tipo de Limpeza</th>
+					<th>Oficina</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -36,6 +37,7 @@
 						<td>${item.tipoHigienizacao.name}</td>
 						<td>${item.necessarioArmazenamentoItensVeiculo}</td>
 						<td>${item.tipoLimpeza.name}</td>
+						<td>${item.oficina.nome}</td>
 						<td><a href="/higienizacao/${item.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

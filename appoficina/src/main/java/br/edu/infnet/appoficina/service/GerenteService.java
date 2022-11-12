@@ -14,8 +14,8 @@ public class GerenteService {
 	@Autowired
 	private GerenteRepository gerenteRepository;
 
-	public void incluir(Gerente bebida) {
-		gerenteRepository.save(bebida);		
+	public void incluir(Gerente gerente) {
+		gerenteRepository.save(gerente);		
 	}
 
 	public void excluir(Integer id) {

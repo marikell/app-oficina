@@ -16,7 +16,13 @@
 
 		<h2>Cadastro de Mecânica</h2>
 		<form action="/mecanica/incluir" method="post">
-
+			<div class="form-group">
+				<label>Oficina:</label> <select name="oficina" class="form-control">
+					<c:forEach var="s" items="${oficinas}">
+						<option value="${s.id}">${s.nome}</option>
+					</c:forEach>
+				</select>
+			</div>
 			<div class="form-group">
 				<label>Placa:</label> <input type="text" class="form-control"
 					id="placa" name="placa">

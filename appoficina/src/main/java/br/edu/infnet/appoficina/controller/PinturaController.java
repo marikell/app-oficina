@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import br.edu.infnet.appoficina.model.domain.Pintura;
 import br.edu.infnet.appoficina.model.domain.TipoMassaAplicada;
 import br.edu.infnet.appoficina.model.domain.TipoPintura;
+import br.edu.infnet.appoficina.service.OficinaService;
 import br.edu.infnet.appoficina.service.PinturaService;
 
 @Controller
@@ -22,6 +23,9 @@ public class PinturaController {
 	private final String cadastroRota = "pintura/cadastro";
 	@Autowired
 	private PinturaService pinturaService;
+	
+	@Autowired
+	private OficinaService oficinaService;
 
 	@GetMapping(value = listaRota)
 	public String telaLista(Model model) {
@@ -46,7 +50,8 @@ public class PinturaController {
 
 		model.addAttribute("tiposMassaAplicada", tiposMassaAplicada);
 		model.addAttribute("tiposPintura", tiposPintura);
-
+		model.addAttribute("oficinas", oficinaService.obterLista());
+		
 		return cadastroRota;
 	}
 

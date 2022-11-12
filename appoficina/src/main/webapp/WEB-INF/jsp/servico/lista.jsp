@@ -20,6 +20,7 @@
 					<th>Nome</th>
 					<th>Código</th>
 					<th>Valor</th>
+					<th>Oficina</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -30,6 +31,7 @@
 						<td>${item.nome}</td>
 						<td>${item.codigo}</td>
 						<td>${item.valor}</td>
+						<td>${item.oficina.nome}</td>
 						<td><a href="/servico/${item.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

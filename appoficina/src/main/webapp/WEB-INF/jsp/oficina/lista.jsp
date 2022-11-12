@@ -5,14 +5,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <title>Cadastro de oficinas</title>
 </head>
 <body>
-<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
 		<h1>Cadastro de Oficinas: ${listagem.size()}</h1>
-
+		<h4>
+			<a href="/oficina">Nova oficina</a>
+		</h4>
 		<table class="table">
 			<thead>
 				<tr>
@@ -24,7 +27,6 @@
 					<th>Estado</th>
 					<th>Bairro</th>
 					<th>Gerente</th>
-					<th>Serviços</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -39,7 +41,6 @@
 						<td>${item.estado}</td>
 						<td>${item.bairro}</td>
 						<td>${item.gerente.nome}</td>
-						<td>${item.servicos.size()}</td>
 						<td><a href="/oficina/${item.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

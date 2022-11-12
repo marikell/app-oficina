@@ -27,9 +27,9 @@ public class GerenteTeste implements ApplicationRunner {
 
 	private void criar() {				
 		Gerente gerente1 = new Gerente();
-		gerente1.setNome("Antônio Silva");
+		gerente1.setNome("João Silva");
 		gerente1.setCpf("46825186925");
-		gerente1.setEmail("antonio.silva@oficina.com.br");
+		gerente1.setEmail("joao.silva@oficina.com.br");
 		gerente1.setDataContratacao(getCalendar(2020, Month.APRIL, 12));
 
 		Gerente gerente2 = new Gerente();
