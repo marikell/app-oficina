@@ -27,7 +27,7 @@ public class MecanicaTeste implements ApplicationRunner {
 		Mecanica mecanica1 = new Mecanica();
 		mecanica1.setTipoManutencao(TipoManutencao.Motor);
 		mecanica1.setValor(20);
-		mecanica1.setTipoVeiculo(TipoVeiculo.Caminhão);
+		mecanica1.setTipoVeiculo(TipoVeiculo.Caminhao);
 		mecanica1.setPlaca("ABC123");
 
 		Mecanica mecanica2 = new Mecanica();
