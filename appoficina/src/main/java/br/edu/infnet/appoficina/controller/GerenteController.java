@@ -1,6 +1,7 @@
 package br.edu.infnet.appoficina.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import br.edu.infnet.appoficina.model.domain.Usuario;
 import br.edu.infnet.appoficina.service.GerenteService;
 
 @Controller
+@ComponentScan
 public class GerenteController  {	
 	private final String rotaBase = "/gerente";
 	private final String inclusaoRota = "/gerente/incluir";
@@ -44,9 +46,9 @@ public class GerenteController  {
 	}
 
 	@PostMapping(value = inclusaoRota)
-	public String incluir(Gerente gerente) {
+	public String incluir(Gerente gerente, @SessionAttribute("user") Usuario usuario) {
 
-		//gerente.setUsuario(usuario);
+		gerente.setUsuario(usuario);
 
 		gerenteService.incluir(gerente);
 

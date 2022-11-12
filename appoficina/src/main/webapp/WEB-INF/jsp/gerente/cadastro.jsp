@@ -26,10 +26,10 @@
 	      <label>CPF:</label>
 	      <input type="text" class="form-control" placeholder="Entre com o seu CPF" name="cpf">
 	    </div>
-<!-- 	    <div class="form-group"> -->
-<!-- 	      <label>Data de contratação:</label> -->
-<!-- 	      <input type="date" class="form-control" placeholder="Entre com o sua data de contratação" name="dataContratacao"> -->
-<!-- 	    </div> -->
+	    <div class="form-group">
+	      <label>Data de contratação:</label>
+	      <input type="date" class="form-control" placeholder="Entre com o sua data de contratação" name="dataContratacao">
+	    </div>
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	  </form>
 
