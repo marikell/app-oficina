@@ -15,6 +15,15 @@
 	<div class="container mt-3">
 
 		<h2>Cadastro de Oficina</h2>
+		<form action="/oficina/cep" class="form-inline" method="post">
+
+			<div class="form-group">
+				<label>CEP:</label> <input type="text" class="form-control"
+					placeholder="Entre com o seu CEP" name="cep">
+			</div>
+
+			<button type="submit" class="btn btn-default">Buscar</button>
+		</form>
 		<form action="/oficina/incluir" method="post">
 			<div class="form-group">
 				<label>Nome:</label> <input type="text" class="form-control"
@@ -28,8 +37,8 @@
 					</c:forEach>
 				</select>
 			</div>
-			
-			
+
+			<c:import url="/WEB-INF/jsp/endereco.jsp" />
 
 			<button type="submit" class="btn btn-default">Cadastrar</button>
 		</form>

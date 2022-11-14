@@ -21,12 +21,12 @@
 				<tr>
 					<th>ID</th>
 					<th>Nome</th>
-					<th>Endereço</th>
+					<th>CEP</th>
+					<th>Logradouro</th>
 					<th>Complemento</th>
-					<th>Cidade</th>
-					<th>Estado</th>
 					<th>Bairro</th>
-					<th>Gerente</th>
+					<th>Localidade</th>
+					<th>UF</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -35,11 +35,11 @@
 					<tr>
 						<td>${item.id}</td>
 						<td>${item.nome}</td>
-						<td>${item.endereco}</td>
-						<td>${item.complemento}</td>
-						<td>${item.cidade}</td>
-						<td>${item.estado}</td>
-						<td>${item.bairro}</td>
+						<td>${item.endereco.cep}</td>
+						<td>${item.endereco.logradouro}</td>
+						<td>${item.endereco.bairro}</td>
+						<td>${item.endereco.localidade}</td>
+						<td>${item.endereco.uf}</td>
 						<td>${item.gerente.nome}</td>
 						<td><a href="/oficina/${item.id}/excluir">excluir</a></td>
 					</tr>

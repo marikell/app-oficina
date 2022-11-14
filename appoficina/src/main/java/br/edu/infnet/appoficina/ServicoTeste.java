@@ -43,46 +43,42 @@ public class ServicoTeste implements ApplicationRunner {
 	private GerenteService gerenteService;
 
 	private void criar() {
-		Gerente gerente1 = new Gerente();
-		gerente1.setNome("Pablo Silva");
-		gerente1.setCpf("11324231");
-		gerente1.setEmail("pablo.silva@oficina.com.br");
-		gerente1.setDataContratacao(Calendar.getInstance());
-		
-		gerenteService.incluir(gerente1);
-		
-		Oficina oficina1 = new Oficina(gerente1);
-		oficina1.setNome("Oficina do Leoncio");
-		oficina1.setCidade("Santo André");
-		oficina1.setEndereco("Rua santo andré");
-		oficina1.setBairro("Bairro da luz");
-		oficina1.setEstado("SP");	
-		
-		oficinaService.incluir(oficina1);
-		
-		Higienizacao higienizacao = new Higienizacao();
-		higienizacao.setTipoHigienizacao(TipoHigienizacao.Aspiracao);
-		higienizacao.setValor(20);
-		higienizacao.setNecessarioArmazenamentoItensVeiculo(true);
-		higienizacao.setTipoLimpeza(TipoLimpeza.Media);
-		higienizacao.setOficina(oficina1);
-		
-		Mecanica mecanica = new Mecanica();
-		mecanica.setTipoManutencao(TipoManutencao.SistemaFreios);
-		mecanica.setValor(100);
-		mecanica.setTipoVeiculo(TipoVeiculo.Carro);
-		mecanica.setPlaca("ABC456");
-		mecanica.setOficina(oficina1);
-		
-		Pintura pintura = new Pintura();
-		pintura.setValor(20);
-		pintura.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
-		pintura.setTipoPintura(TipoPintura.Metalica);
-		pintura.setCor(new Color(255,200,100));
-		pintura.setOficina(oficina1);
-		
-		servicoService.incluir(pintura);
-		servicoService.incluir(mecanica);
-		servicoService.incluir(higienizacao);
+//		Gerente gerente1 = new Gerente();
+//		gerente1.setNome("Pablo Silva");
+//		gerente1.setCpf("11324231");
+//		gerente1.setEmail("pablo.silva@oficina.com.br");
+//		gerente1.setDataContratacao(Calendar.getInstance());
+//		
+//		gerenteService.incluir(gerente1);
+//
+//		Oficina oficina1 = new Oficina(gerente1);
+//		oficina1.setNome("Oficina do Leoncio");
+//		
+//		oficinaService.incluir(oficina1);
+//		
+//		Higienizacao higienizacao = new Higienizacao();
+//		higienizacao.setTipoHigienizacao(TipoHigienizacao.Aspiracao);
+//		higienizacao.setValor(20);
+//		higienizacao.setNecessarioArmazenamentoItensVeiculo(true);
+//		higienizacao.setTipoLimpeza(TipoLimpeza.Media);
+//		higienizacao.setOficina(oficina1);
+//		
+//		Mecanica mecanica = new Mecanica();
+//		mecanica.setTipoManutencao(TipoManutencao.SistemaFreios);
+//		mecanica.setValor(100);
+//		mecanica.setTipoVeiculo(TipoVeiculo.Carro);
+//		mecanica.setPlaca("ABC456");
+//		mecanica.setOficina(oficina1);
+//		
+//		Pintura pintura = new Pintura();
+//		pintura.setValor(20);
+//		pintura.setTipoMassaAplicada(TipoMassaAplicada.Acrilica);
+//		pintura.setTipoPintura(TipoPintura.Metalica);
+//		pintura.setCor(new Color(255,200,100));
+//		pintura.setOficina(oficina1);
+//		
+//		servicoService.incluir(pintura);
+//		servicoService.incluir(mecanica);
+//		servicoService.incluir(higienizacao);
 	}
 }

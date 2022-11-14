@@ -7,21 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "oficina")
 public class Oficina {
 	private String nome;
-	private String endereco;
-	private String complemento;
-	private String cidade;
-	private String estado;
-	private String bairro;
 	
 	@ManyToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name = "idGerente")
 	private Gerente gerente;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
+
 
 	public Oficina() {
 
@@ -51,52 +52,20 @@ public class Oficina {
 		this.nome = nome;
 	}
 
-	public String getEndereco() {
+	public Gerente getGerente() {
+		return gerente;
+	}
+	
+	public Endereco getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
-
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public String getBairro() {
-		return bairro;
-	}
-
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
-
-	public Gerente getGerente() {
-		return gerente;
 	}
 
 	@Override
 	public String toString() {
-		return nome + ";" + endereco + ";" + complemento + ";" + cidade + ";" + estado + ";" + gerente + ";";
+		return nome + ";" + endereco + ";" + gerente + ";";
 	}
 }

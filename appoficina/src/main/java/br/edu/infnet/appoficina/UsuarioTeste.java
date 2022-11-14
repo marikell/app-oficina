@@ -18,12 +18,12 @@ public class UsuarioTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("## Cadastro de Usuários ##");
-
-		Usuario u1 = new Usuario();
-		u1.setEmail("admin@admin.com");
-		u1.setNome("Administrador");
-		u1.setSenha("123");
-		usuarioService.incluir(u1);
+//		System.out.println("## Cadastro de Usuários ##");
+//
+//		Usuario u1 = new Usuario();
+//		u1.setEmail("admin@admin.com");
+//		u1.setNome("Administrador");
+//		u1.setSenha("123");
+//		usuarioService.incluir(u1);
 	}
 }
