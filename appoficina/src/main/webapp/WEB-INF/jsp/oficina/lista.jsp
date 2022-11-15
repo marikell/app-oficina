@@ -27,6 +27,7 @@
 					<th>Bairro</th>
 					<th>Localidade</th>
 					<th>UF</th>
+					<th>Gerente</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -37,6 +38,7 @@
 						<td>${item.nome}</td>
 						<td>${item.endereco.cep}</td>
 						<td>${item.endereco.logradouro}</td>
+						<td>${item.endereco.complemento}</td>
 						<td>${item.endereco.bairro}</td>
 						<td>${item.endereco.localidade}</td>
 						<td>${item.endereco.uf}</td>

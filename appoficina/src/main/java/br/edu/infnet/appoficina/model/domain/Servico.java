@@ -22,7 +22,7 @@ public abstract class Servico {
 	private String nome;
 	private double valor;
 	
-	@ManyToOne(cascade=CascadeType.MERGE)
+	@ManyToOne(cascade=CascadeType.DETACH)
 	@JoinColumn(name = "idOficina")
 	private Oficina oficina;
 

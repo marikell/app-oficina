@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Oficina {
 	private String nome;
 	
-	@ManyToOne(cascade=CascadeType.MERGE)
+	@ManyToOne(cascade=CascadeType.DETACH)
 	@JoinColumn(name = "idGerente")
 	private Gerente gerente;
 	

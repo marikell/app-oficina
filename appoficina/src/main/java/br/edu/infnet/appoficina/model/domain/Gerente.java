@@ -19,7 +19,7 @@ public class Gerente  {
 	private String cpf;
 	private String email;
 	private Calendar dataContratacao;
-	@ManyToOne(cascade = CascadeType.MERGE)
+	@ManyToOne(cascade=CascadeType.DETACH)
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	

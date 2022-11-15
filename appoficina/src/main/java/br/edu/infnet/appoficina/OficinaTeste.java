@@ -30,26 +30,26 @@ public class OficinaTeste implements ApplicationRunner {
 
 	private void criar() {
 
-//		Gerente gerente1 = new Gerente();
-//
-//		gerente1.setCpf("46825182990");
-//		gerente1.setDataContratacao(Calendar.getInstance());
-//		gerente1.setEmail("marisilva@gmail.com");
-//		gerente1.setNome("Maria");
-//
-//		gerenteService.incluir(gerente1);
-//		
-//		Oficina oficina1 = new Oficina(gerente1);
-//		oficina1.setNome("Oficina do João");
-//
-//		Oficina oficina2 = new Oficina(gerente1);
-//		oficina2.setNome("Oficina do Marco");
-//
-//		Oficina oficina3 = new Oficina(gerente1);
-//		oficina3.setNome("Oficina do Paulo");
-//
-//		oficinaService.incluir(oficina1);
-//		oficinaService.incluir(oficina2);
-//		oficinaService.incluir(oficina3);
+		Gerente gerente1 = new Gerente();
+
+		gerente1.setCpf("46825182990");
+		gerente1.setDataContratacao(Calendar.getInstance());
+		gerente1.setEmail("marisilva@gmail.com");
+		gerente1.setNome("Maria");
+
+		gerenteService.incluir(gerente1);
+		
+		Oficina oficina1 = new Oficina(gerente1);
+		oficina1.setNome("Oficina do João");
+
+		Oficina oficina2 = new Oficina(gerente1);
+		oficina2.setNome("Oficina do Marco");
+
+		Oficina oficina3 = new Oficina(gerente1);
+		oficina3.setNome("Oficina do Paulo");
+
+		oficinaService.incluir(oficina1);
+		oficinaService.incluir(oficina2);
+		oficinaService.incluir(oficina3);
 	}
 }
