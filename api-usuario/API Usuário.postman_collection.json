@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "62019915-1db1-4a8f-b5fe-e3a03e1badba",
+		"name": "API Usuário",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Marianne\",\r\n    \"email\": \"marikell.silva@gmail.com\",\r\n    \"senha\" : \"123\",\r\n    \"endereco\" : {\r\n        \"cep\" : \"18110500\",\r\n        \"logradouro\" : \"Rua teste\",\r\n        \"complemento\" : \"Apto 29\",\r\n        \"bairro\" : \"Parque\",\r\n        \"localidade\" : \"Votorantim\",\r\n        \"uf\" : \"SP\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/usuario/incluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"usuario",
+						"incluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/usuario/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"usuario",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/usuario/4/excluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"usuario",
+						"4",
+						"excluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/usuario/validar?email=admin@admin.com&senha=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"usuario",
+						"validar"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@admin.com"
+						},
+						{
+							"key": "senha",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
